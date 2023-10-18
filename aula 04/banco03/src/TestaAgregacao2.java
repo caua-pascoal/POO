@@ -1,4 +1,4 @@
-public class TestaAgregacao2 {
+public class TestaEncapsulamento {
     public static void main (String[] args) {
         Conta umaConta = new Conta();
         umaConta.deposita(500);
