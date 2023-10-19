@@ -1,6 +1,6 @@
 {
     "java.dependency.syncWithFolderExplorer": true,
     "java.dependency.packagePresentation": "hierarchical",
-    "java.project.explorer.showNonJavaResources": true,
+    "java.project.explorer.showNonJavaResources": false,
     "java.debug.settings.onBuildFailureProceed": true
 }
