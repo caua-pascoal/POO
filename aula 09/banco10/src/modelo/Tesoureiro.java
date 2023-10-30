@@ -1,7 +1,6 @@
 package modelo;
 
-public class Tesoureiro extends Funcionario {
-	
+public class Tesoureiro extends FuncionarioAutenticavel {
 	@Override
 	public double getBonificacao() {
 		return super.salario * 0.20;

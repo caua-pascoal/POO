@@ -5,7 +5,7 @@ public class SistemaInterno {
 	public SistemaInterno(int senhaSistema) {
 		this.senhaSistema = senhaSistema;
 	}
-	public void login(Gerente g) {
+	public void login(FuncionarioAutenticavel g) {
 		if(g.autentica(this.senhaSistema)==true)
 			System.out.println("Autenticado!");
 		else
