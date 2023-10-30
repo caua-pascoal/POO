@@ -1,24 +1,20 @@
 package modelo;
 
-public class Tesoureiro extends Funcionario implements Autenticavel{
-	private int senha;
-	
-	public int getSenha() {
-		return this.senha;
-	}
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-	
-	public boolean autentica(int senha) {
-		if(senha==this.senha)
-			return true;
-		else 
-			return false;
-	}
-	
+public class Tesoureiro extends Funcionario implements Autenticavel {
+	private AutenticadorLogica autenticador = new AutenticadorLogica();
+
 	@Override
 	public double getBonificacao() {
 		return super.salario * 0.20;
+	}
+	
+	@Override
+	public boolean autentica (int senha) {
+		return this.autenticador.autentica(senha);
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.autenticador.setSenha(senha);
 	}
 }

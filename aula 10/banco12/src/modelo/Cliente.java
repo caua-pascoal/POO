@@ -4,21 +4,11 @@ public class Cliente implements Autenticavel{
 	private String nome;
 	private String cpf;
 	private String email;
-	private int senha;
-	
-	public int getSenha() {
-		return this.senha;
-	}
-	public void setSenha(int senha) {
-		this.senha = senha;
-	}
-	
+	private AutenticadorLogica autenticador = new AutenticadorLogica();
+
 	@Override
-	public boolean autentica(int senha) {
-		if(senha==this.senha)
-			return true;
-		else 
-			return false;
+	public boolean autentica (int senha) {
+		return this.autenticador.autentica(senha);
 	}
 	
 	public Cliente() {
@@ -85,6 +75,11 @@ public class Cliente implements Autenticavel{
 		//System.out.println("Nome do titular: "+this.getNome("O nome e: "));
 		System.out.println("E-mail do titular: "+this.email);
 		System.out.println("Cpf do titular: "+this.getCpf());
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.autenticador.setSenha(senha);
 	}
 
 }
