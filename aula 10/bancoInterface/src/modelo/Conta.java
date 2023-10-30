@@ -1,6 +1,6 @@
 package modelo;
 
-public class Conta {
+abstract class Conta {
 	// Atributos
 	protected Cliente titular; //get (IMUTÁVEL)
 	protected double saldo; // get e operações bancárias
