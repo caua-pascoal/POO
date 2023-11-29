@@ -1,6 +1,6 @@
 package br.com.cefet.banco.modelo;
 
-public class Conta{
+public class Conta implements Comparable<Conta>{
 	// Atributos
 	protected Cliente titular; // Apenas getTitular (IMUTÁVEL)
 	protected double saldo; // getSaldo, saca, deposita, transferePara
@@ -69,5 +69,11 @@ public class Conta{
 			return conseguiuDepositar; // O retorno será true, o mesmo do método deposita
 		}
 		return false;
+	}
+
+	@Override
+	public int compareTo(Conta outraConta) {
+		// return (int) (this.saldo - outraConta.saldo);
+		return (int) (this.numero - outraConta.numero);
 	}
 }
